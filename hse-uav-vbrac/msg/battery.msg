@@ -1,0 +1,4 @@
+float32 percentage
+float32 start_time
+float32 current_time
+float32 duration
