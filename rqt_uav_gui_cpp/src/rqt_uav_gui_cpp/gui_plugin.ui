@@ -1,0 +1,1855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>809</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UAV GUI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>10</y>
+      <width>960</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #e7f3ff; /* Нежно-голубой фон */
+background-image: url('light-texture.png'); /* Легкая текстура */
+background-size: cover; /* Полное покрытие текстурой */
+</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="leaderTab">
+     <attribute name="title">
+      <string>Leader Control</string>
+     </attribute>
+     <widget class="QPushButton" name="rotLeftButton">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>400</y>
+        <width>71</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Yaw L</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="forwardButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>350</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Forward</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rotRightButton">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>400</y>
+        <width>71</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Yaw R</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="upButton">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>350</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Up</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backwardButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>450</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Backward</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="forwardCameraLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>30</y>
+        <width>331</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="forwardCameraLayout" stretch="0">
+       <item>
+        <widget class="rqt_uav_gui_cpp::RatioLayoutedFrame" name="forwardCameraFrame_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="downCameraLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>30</y>
+        <width>331</width>
+        <height>271</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="downCameraLayout" stretch="0">
+       <item>
+        <widget class="rqt_uav_gui_cpp::RatioLayoutedFrame" name="downCameraFrame_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="yawLeftButton">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>400</y>
+        <width>71</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Roll L</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="downButton">
+      <property name="geometry">
+       <rect>
+        <x>760</x>
+        <y>450</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Down</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="forwardCameraLabel">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>10</y>
+        <width>120</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Camera Forward</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="downCameraLabel">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>10</y>
+        <width>120</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Camera Down</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="yawRightButton">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>400</y>
+        <width>71</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+
+QPushButton:checked {
+    background-color: #f67280; /* Новый цвет при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Roll R</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="endButton">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>590</y>
+        <width>120</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #3c4d63, stop:1 #2d3e52); /* Металлический градиент */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #556a84, stop:1 #3f526b); /* Более яркий металлический эффект */
+}
+
+QPushButton:pressed {
+    background-color: #2a3b50; /* Темнее при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="armButton">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>520</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #253a56; /* Темно-синий фон */
+    color: #ffffff;
+    border: 2px solid #58b6ff; /* Неоновая голубая граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    border-color: #6bd0ff; /* Ярче при наведении */
+    box-shadow: 0px 0px 10px #58b6ff; /* Эффект свечения */
+}
+
+QPushButton:pressed {
+    background-color: #1c2f45; /* Более тёмный оттенок при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Arm</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="offboardOnButton">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>520</y>
+        <width>111</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #253a56; /* Темно-синий фон */
+    color: #ffffff;
+    border: 2px solid #58b6ff; /* Неоновая голубая граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    border-color: #6bd0ff; /* Ярче при наведении */
+    box-shadow: 0px 0px 10px #58b6ff; /* Эффект свечения */
+}
+
+QPushButton:pressed {
+    background-color: #1c2f45; /* Более тёмный оттенок при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Offboard on</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="leaderBox">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>660</y>
+        <width>201</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="leaderLabel">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>640</y>
+        <width>310</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select camera</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>340</y>
+        <width>331</width>
+        <height>291</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="forwardCameraLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>320</y>
+        <width>31</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Map</string>
+      </property>
+     </widget>
+     <widget class="QwtScaleWidget" name="ScaleWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>60</width>
+        <height>291</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBatteryBar">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>700</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="BrightText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="HighlightedText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="BrightText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="HighlightedText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="Button">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="BrightText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Base">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Window">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>231</red>
+            <green>243</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="Highlight">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>145</red>
+            <green>145</green>
+            <blue>145</blue>
+           </color>
+          </brush>
+         </colorrole>
+         <colorrole role="HighlightedText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>255</red>
+            <green>255</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="swarmTab">
+     <attribute name="title">
+      <string>Swarm Contol</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>591</width>
+        <height>331</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="minHeightLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Swarm info</string>
+      </property>
+     </widget>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>30</y>
+        <width>341</width>
+        <height>731</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Control</string>
+       </attribute>
+       <widget class="QPushButton" name="startButton_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>580</y>
+          <width>151</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="homeButton_3">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>580</y>
+          <width>161</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Home</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="longitudeBox_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>410</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="longitudeLabel_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>390</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Longitude</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="latitudeLabel_3">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>390</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Latitude</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="latitudeBox_3">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>410</y>
+          <width>91</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="addButton_3">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>519</y>
+          <width>251</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #b52a2a; /* Ярко-красный фон */
+    color: #ffffff;
+    border: 2px solid #ff4b4b; /* Яркая красная граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #ff6b6b; /* Светлее при наведении */
+    box-shadow: 0px 0px 10px #ff4b4b; /* Лёгкое свечение */
+}
+
+QPushButton:pressed {
+    background-color: #a12222; /* Темнее при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Add Checkpoint</string>
+        </property>
+       </widget>
+       <widget class="QDoubleSpinBox" name="altitudeBox_3">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>410</y>
+          <width>91</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="altitudeLabel_3">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>390</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Altitude</string>
+        </property>
+       </widget>
+       <widget class="QProgressBar" name="progressBar_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>660</y>
+          <width>341</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="value">
+         <number>24</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="progressLabel_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>630</y>
+          <width>250</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Progress</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>-10</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Swarm settings</string>
+        </property>
+       </widget>
+       <widget class="Line" name="line">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>330</y>
+          <width>341</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>350</y>
+          <width>171</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Flight by Coordinates</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="armButton_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>460</y>
+          <width>100</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #253a56; /* Темно-синий фон */
+    color: #ffffff;
+    border: 2px solid #58b6ff; /* Неоновая голубая граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    border-color: #6bd0ff; /* Ярче при наведении */
+    box-shadow: 0px 0px 10px #58b6ff; /* Эффект свечения */
+}
+
+QPushButton:pressed {
+    background-color: #1c2f45; /* Более тёмный оттенок при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Arm</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="offboardOnButton_2">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>460</y>
+          <width>111</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #253a56; /* Темно-синий фон */
+    color: #ffffff;
+    border: 2px solid #58b6ff; /* Неоновая голубая граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    border-color: #6bd0ff; /* Ярче при наведении */
+    box-shadow: 0px 0px 10px #58b6ff; /* Эффект свечения */
+}
+
+QPushButton:pressed {
+    background-color: #1c2f45; /* Более тёмный оттенок при нажатии */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Offboard on</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>341</width>
+          <height>321</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QPushButton" name="saveButton">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>210</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Save</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="minHeightLabel">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>90</y>
+           <width>81</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Min Height</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="longitudeBox_6">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>120</y>
+           <width>91</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: #0f0f0f; /* Темный фон кнопки */
+    color: #00ffff; /* Неоновый голубой текст */
+    border: 2px solid #ff00ff; /* Ярко-фиолетовая граница */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px; /* Внутренний отступ для большего объема */
+    font-family: 'Orbitron', sans-serif; /* Футуристический шрифт (при наличии) */
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+QPushButton:hover {
+    background-color: #ff00ff; /* При наведении — фиолетовый неоновый фон */
+    color: #000000; /* Черный текст */
+}
+
+QPushButton:pressed {
+    background-color: #00ffff; /* При нажатии — голубой неоновый фон */
+    color: #ffffff; /* Белый текст */
+    border: 2px solid #000000; /* Черная граница при нажатии */
+}
+</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="algorithmBox">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>50</y>
+           <width>251</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #4b4f75, stop:1 #2c2f38); /* Градиент от светлого к темному */
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #60678b, stop:1 #3e465a); /* Изменение градиента при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #1b1e26;
+}
+</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="latitudeBox_6">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>120</y>
+           <width>91</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="maxHeightLabel">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>90</y>
+           <width>71</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Max Height</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="distanceLabel_2">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>140</y>
+           <width>71</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: #0f0f0f; /* Темный фон кнопки */
+    color: #00ffff; /* Неоновый голубой текст */
+    border: 2px solid #ff00ff; /* Ярко-фиолетовая граница */
+    border-radius: 10px; /* Скругленные углы */
+    padding: 10px; /* Внутренний отступ для большего объема */
+    font-family: 'Orbitron', sans-serif; /* Футуристический шрифт (при наличии) */
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+QPushButton:hover {
+    background-color: #ff00ff; /* При наведении — фиолетовый неоновый фон */
+    color: #000000; /* Черный текст */
+}
+
+QPushButton:pressed {
+    background-color: #00ffff; /* При нажатии — голубой неоновый фон */
+    color: #ffffff; /* Белый текст */
+    border: 2px solid #000000; /* Черная граница при нажатии */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Parameter</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="algorithmLabel">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>30</y>
+           <width>251</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Algorithm</string>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="parameterBox">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>170</y>
+           <width>91</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QDoubleSpinBox" name="batteryBox">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>170</y>
+           <width>91</width>
+           <height>22</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="distanceLabel_3">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>140</y>
+           <width>141</width>
+           <height>30</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Landing battery level, %</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="loadButton">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>210</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: #3a506b; /* Матовый серо-синий фон */
+    color: #ffffff;
+    border: 1px solid #4b687f; /* Лёгкая граница для акцента */
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #4e647f; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #2e3f52; /* Темнее при нажатии */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Load</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="addButton_4">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>260</y>
+           <width>251</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: #b52a2a; /* Ярко-красный фон */
+    color: #ffffff;
+    border: 2px solid #ff4b4b; /* Яркая красная граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #ff6b6b; /* Светлее при наведении */
+    box-shadow: 0px 0px 10px #ff4b4b; /* Лёгкое свечение */
+}
+
+QPushButton:pressed {
+    background-color: #a12222; /* Темнее при нажатии */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Set</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Cameras</string>
+       </attribute>
+       <widget class="QWidget" name="forwardCameraLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>331</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="forwardCameraLayout_4">
+         <item>
+          <widget class="rqt_uav_gui_cpp::RatioLayoutedFrame" name="forwardCameraFrame_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::ActionsContextMenu</enum>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="forwardCameraLabel_6">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>20</y>
+          <width>120</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Camera Forward</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="downCameraLayoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>340</y>
+          <width>331</width>
+          <height>271</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="downCameraLayout_4">
+         <item>
+          <widget class="rqt_uav_gui_cpp::RatioLayoutedFrame" name="downCameraFrame">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>80</height>
+            </size>
+           </property>
+           <property name="contextMenuPolicy">
+            <enum>Qt::ActionsContextMenu</enum>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="downCameraLabel_4">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>320</y>
+          <width>120</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Camera Down</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>420</y>
+        <width>591</width>
+        <height>331</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="minHeightLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>390</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Coordinates</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Formation Control</string>
+     </attribute>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>911</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QGraphicsView" name="formationGraphics">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>1</y>
+         <width>911</width>
+         <height>481</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QwtPlot" name="formPlot">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>881</width>
+         <height>461</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="autoReplot">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="algorithmLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="algorithmLabel_3">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>0</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Formation preview</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="algorithmBox_2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>590</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="algorithmLabel_4">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>560</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select formation</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="setFormationButton">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>590</y>
+        <width>171</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #003366; /* Глубокий синий фон */
+    color: #ffffff;
+    border: 2px solid #0099ff; /* Ярко-синяя неоновая граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    border-color: #33ccff; /* Более светлый синий при наведении */
+    box-shadow: 0px 0px 10px #0099ff; /* Эффект неонового свечения */
+}
+
+QPushButton:pressed {
+    background-color: #00294d; /* Темнее при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Set</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="plusGradusRotFormButton">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>590</y>
+        <width>71</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #1f4031; /* Тёмно-зелёный фон */
+    color: #ffffff;
+    border: 2px solid #4eff77; /* Ярко-зелёная неоновая граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    border-color: #72ffa2; /* Более яркое свечение при наведении */
+    box-shadow: 0px 0px 10px #4eff77; /* Эффект неонового свечения */
+}
+
+QPushButton:pressed {
+    background-color: #153227; /* Более тёмный оттенок при нажатии */
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>+45°</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="minusGradusRotFormButton">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>590</y>
+        <width>71</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #b52a2a; /* Ярко-красный фон */
+    color: #ffffff;
+    border: 2px solid #ff4b4b; /* Яркая красная граница */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #ff6b6b; /* Светлее при наведении */
+    box-shadow: 0px 0px 10px #ff4b4b; /* Лёгкое свечение */
+}
+
+QPushButton:pressed {
+    background-color: #a12222; /* Темнее при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>-45°</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="formParamBox">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>690</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>100000.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>10.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="formSecAngBox">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>690</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <double>340.000000000000000</double>
+      </property>
+      <property name="value">
+       <double>90.000000000000000</double>
+      </property>
+     </widget>
+     <widget class="QLabel" name="formParamLabel">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>660</y>
+        <width>81</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Parameter</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="formSecAngLabel">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>660</y>
+        <width>91</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sector Angle</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="helpFormButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>700</y>
+        <width>81</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #e6b800; /* Ярко-жёлтый фон */
+    color: #000000;
+    border: 2px solid #ffd500; /* Граница с более светлым жёлтым оттенком */
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 15px;
+}
+
+QPushButton:hover {
+    background-color: #ffcc33; /* Светлее при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #b38600; /* Темнее при нажатии */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Help</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QwtPlot</class>
+   <extends>QFrame</extends>
+   <header>qwt_plot.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QwtScaleWidget</class>
+   <extends>QWidget</extends>
+   <header>qwt_scale_widget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>rqt_uav_gui_cpp::RatioLayoutedFrame</class>
+   <extends>QFrame</extends>
+   <header>rqt_uav_gui_cpp/rlf.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

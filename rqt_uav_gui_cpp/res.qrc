@@ -1,0 +1,5 @@
+<RCC>
+	<qresource prefix="/">
+		<file>images/gazeboModel.png</file>
+	</qresource>
+</RCC>

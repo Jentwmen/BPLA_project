@@ -1,0 +1,16 @@
+<library path="lib/librqt_uav_gui_cpp">
+  <class name="rqt_uav_gui_cpp/GUIPlugin" type="rqt_uav_gui_cpp::GUIPlugin" base_class_type="rqt_gui_cpp::Plugin">
+    <description>
+      Custom rqt plugin for UAV swarm teleoperation.
+    </description>
+    <qtgui>
+      <group>
+        <label>Swarm GUI</label>
+        <icon type="theme">folder</icon>
+      </group>
+      <label>GUI 2.0</label>
+      <icon type="theme">system-help</icon>
+      <statustip>In development.</statustip>
+    </qtgui>
+  </class>
+</library>

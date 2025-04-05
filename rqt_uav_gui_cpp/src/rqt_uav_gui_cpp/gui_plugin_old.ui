@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>810</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UAV GUI</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>800</height>
+    </rect>
+   </property>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>960</width>
+      <height>800</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="leaderTab">
+     <attribute name="title">
+      <string>Leader Control</string>
+     </attribute>
+     <widget class="QPushButton" name="rotLeftButton">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>580</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rot L</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="forwardButton">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>530</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Forward</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="velocityLabel">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>696</y>
+        <width>67</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Velocity</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rotRightButton">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>580</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Rot R</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="upButton">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>530</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Up</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="backwardButton">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>630</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Backward</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="forwardCameraLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>420</width>
+        <height>420</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="forwardCameraLayout" stretch="0">
+       <item>
+        <widget class="rqt_uav_gui_cpp::RatioLayoutedFrame" name="forwardCameraFrame">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="downCameraLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>30</y>
+        <width>420</width>
+        <height>420</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="downCameraLayout" stretch="0">
+       <item>
+        <widget class="rqt_uav_gui_cpp::RatioLayoutedFrame" name="downCameraFrame">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::ActionsContextMenu</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="yawLeftButton">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>580</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Yaw L</string>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="velocityScrollBar">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>730</y>
+        <width>270</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="downButton">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>630</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Down</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="forwardCameraLabel">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>10</y>
+        <width>120</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Camera Forward</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="velocityText">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>690</y>
+        <width>40</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="downCameraLabel">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>10</y>
+        <width>120</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Camera Down</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="yawRightButton">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>580</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Yaw R</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="endButton">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>470</y>
+        <width>120</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>End</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentDroneLabel">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>520</y>
+        <width>101</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Current drone</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="leaderBox">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>470</y>
+        <width>300</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="currentDroneSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>540</y>
+        <width>48</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="setupLeaderButton">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>584</y>
+        <width>120</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Setup Leader</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="heightText">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>720</y>
+        <width>71</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="heightLabel">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>690</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Height</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="batteryText">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>720</y>
+        <width>70</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="batteryLabel">
+      <property name="geometry">
+       <rect>
+        <x>850</x>
+        <y>690</y>
+        <width>70</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Battery</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="manualControlButton">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>630</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Manual control</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="leaderText">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>470</y>
+        <width>301</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="armButton">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>700</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Arm</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="offboardOnButton">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>700</y>
+        <width>100</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Offboard on</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="swarmTab">
+     <attribute name="title">
+      <string>Swarm Control</string>
+     </attribute>
+     <widget class="QFrame" name="frame">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>620</width>
+        <height>620</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::WinPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="minHeightScrollBar">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>70</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="maxHeightScrollBar">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>170</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="minHeightLabel">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>40</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Min Height</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="maxHeightLabel">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>140</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Max Height</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="algorithmBox">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>490</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="configBox">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>380</y>
+        <width>251</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="algorithmLabel">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>460</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Algorithm</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="configLabel">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>360</y>
+        <width>251</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Config Presets</string>
+      </property>
+     </widget>
+     <widget class="QScrollBar" name="distanceScrollBar">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>280</y>
+        <width>251</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="distanceLabel">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>250</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Distance Between Drones</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="coordinatesTab">
+     <attribute name="title">
+      <string>Flight by cordinates</string>
+     </attribute>
+     <widget class="QRadioButton" name="manualControlButton_2">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>30</y>
+        <width>131</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Manual Control</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="trackLabel">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>60</y>
+        <width>111</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Current Track</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="map">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>100</y>
+        <width>800</width>
+        <height>430</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="longitudeLabel">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>550</y>
+        <width>250</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Longitude</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="altitudeLabel">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>650</y>
+        <width>250</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Altitude</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="longitudeBox">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>570</y>
+        <width>250</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addButton">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>710</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Add Checkpoint</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="latitudeBox">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>620</y>
+        <width>250</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="latitudeLabel">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>600</y>
+        <width>250</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Latitude</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="altitudeBox">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>670</y>
+        <width>250</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="progressLabel">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>680</y>
+        <width>250</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Progress</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopButton">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>600</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="homeButton">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>640</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startButton">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>560</y>
+        <width>251</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>710</y>
+        <width>250</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>24</number>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>rqt_uav_gui_cpp::RatioLayoutedFrame</class>
+   <extends>QFrame</extends>
+   <header>rqt_uav_gui_cpp/rlf.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

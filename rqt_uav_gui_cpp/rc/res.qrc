@@ -1,0 +1,28 @@
+<RCC>
+	<qresource prefix="/imgs">
+		<file>gazeboModel.png</file>
+		<file>wedge.png</file>
+		<file>wedgeWithFirst.png</file>
+		<file>chess.png</file>
+		<file>rectangleFull.png</file>
+		<file>rectangleEmpty.png</file>
+		<file>circle.png</file>
+		<file>rhombusFull.png</file>
+		<file>rhombusEmpty.png</file>
+		<file>snake.png</file>
+		<file>peleng.png</file>
+		<file>sector.png</file>
+		<file>column.png</file>
+		<file>front.png</file>
+		<file>flanks.png</file>
+		<file>90left.svg</file>
+		<file>90right.svg</file>
+		<file>arrow_back.svg</file>
+		<file>arrow_forward.svg</file>
+		<file>arrow_left.svg</file>
+		<file>arrow_right.svg</file>
+		<file>home.svg</file>
+		<file>up.svg</file>
+		<file>down.svg</file>
+	</qresource>
+</RCC>
